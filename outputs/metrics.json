@@ -1,0 +1,58 @@
+{
+  "dataset": "Enron-Spam (Metsis et al., 2006)",
+  "cleaning": {
+    "rows_raw": 33716,
+    "exact_duplicates_removed": 3222,
+    "empty_emails_removed": 1,
+    "empty_after_preprocessing_removed": 10,
+    "conflicting_label_rows_removed": 0,
+    "near_duplicates_removed": 1564,
+    "rows_clean": 28919,
+    "spam_clean": 14482,
+    "ham_clean": 14437
+  },
+  "train_size": 23135,
+  "test_size": 5784,
+  "best_model": "Naive Bayes",
+  "best_params": {
+    "clf__alpha": 0.003,
+    "tfidf__ngram_range": [
+      1,
+      2
+    ]
+  },
+  "precision_target": 0.995,
+  "threshold_rule": "lowest threshold with training precision >= 99.5%",
+  "cv_average_precision": {
+    "Naive Bayes": 0.9994,
+    "Logistic Regression": 0.9988
+  },
+  "test_default_threshold": {
+    "threshold": 0.5,
+    "accuracy": 0.9877247579529738,
+    "precision": 0.9892659279778393,
+    "recall": 0.9861926130479807,
+    "f1": 0.9877268798617114,
+    "roc_auc": 0.999260608928721,
+    "avg_precision": 0.9992381920254524,
+    "true_neg": 2856,
+    "false_pos": 31,
+    "false_neg": 40,
+    "true_pos": 2857,
+    "false_positive_rate": 0.010737790093522688
+  },
+  "test_tuned_threshold": {
+    "threshold": 0.874,
+    "accuracy": 0.9804633471645919,
+    "precision": 0.9943181818181818,
+    "recall": 0.9665170866413532,
+    "f1": 0.9802205496236653,
+    "roc_auc": 0.999260608928721,
+    "avg_precision": 0.9992381920254524,
+    "true_neg": 2871,
+    "false_pos": 16,
+    "false_neg": 97,
+    "true_pos": 2800,
+    "false_positive_rate": 0.005542085209560097
+  }
+}

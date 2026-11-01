@@ -1,0 +1,56 @@
+
+======================================================================
+1. LOAD DATA
+======================================================================
+Loaded enron_spam_data.zip: 33,716 emails, columns: ['Message ID', 'Subject', 'Message', 'Spam/Ham', 'Date']
+Labels: {'spam': 17171, 'ham': 16545}
+Missing subject: 289 | missing body: 371
+
+======================================================================
+2. CLEAN + PREPROCESS TEXT
+======================================================================
+Preprocessed 30,493 emails in 9s
+Cleaning summary:
+  rows_raw                                33,716
+  exact_duplicates_removed                 3,222
+  empty_emails_removed                         1
+  empty_after_preprocessing_removed           10
+  conflicting_label_rows_removed               0
+  near_duplicates_removed                  1,564
+  rows_clean                              28,919
+  spam_clean                              14,482
+  ham_clean                               14,437
+
+======================================================================
+3. SPLIT
+======================================================================
+Train: 23,135 emails (50.1% spam) | Test: 5,784 emails (50.1% spam)
+
+======================================================================
+4. TF-IDF FEATURES + MODEL TUNING (3-fold CV on training data)
+======================================================================
+  Naive Bayes          CV average precision 0.9994 | best: {'alpha': 0.003, 'ngram_range': (1, 2)} [122s]
+  Logistic Regression  CV average precision 0.9988 | best: {'C': 1000, 'ngram_range': (1, 2)} [133s]
+
+Best model by cross-validation: Naive Bayes
+TF-IDF vocabulary size: 100,000 features
+
+======================================================================
+5. THRESHOLD TUNING FOR HIGH PRECISION (training data only)
+======================================================================
+Chosen threshold: 0.8740 (lowest threshold with training precision >= 99.5%)
+
+======================================================================
+6. EVALUATE ON THE HELD-OUT TEST SET
+======================================================================
+                                      accuracy  precision  recall      f1  roc_auc  false_pos  false_neg
+Naive Bayes (threshold 0.50)            0.9877     0.9893  0.9862  0.9877   0.9993         31         40
+Logistic Regression (threshold 0.50)    0.9886     0.9853  0.9921  0.9886   0.9992         43         23
+Naive Bayes (tuned threshold 0.87)      0.9805     0.9943  0.9665  0.9802   0.9993         16         97
+
+Top spam words: http, remov, softwar, onlin, bodi, hello, medic, mobil email, php, phone mobil, money, read attach
+Top ham words : enron, vinc, thank, attach, louis, question, dave, energi, daren, deal, let know, employe
+
+Misclassified test emails saved: {'false negative (spam missed)': 97, 'false positive (ham flagged as spam)': 16}
+
+Saved model, metrics and figures to: /home/claude/spam-email-classifier/outputs

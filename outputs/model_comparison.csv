@@ -1,0 +1,4 @@
+model,threshold,accuracy,precision,recall,f1,roc_auc,avg_precision,true_neg,false_pos,false_neg,true_pos,false_positive_rate
+Naive Bayes (threshold 0.50),0.5,0.9877,0.9893,0.9862,0.9877,0.9993,0.9992,2856.0,31.0,40.0,2857.0,0.0107
+Logistic Regression (threshold 0.50),0.5,0.9886,0.9853,0.9921,0.9886,0.9992,0.9992,2844.0,43.0,23.0,2874.0,0.0149
+Naive Bayes (tuned threshold 0.87),0.874,0.9805,0.9943,0.9665,0.9802,0.9993,0.9992,2871.0,16.0,97.0,2800.0,0.0055

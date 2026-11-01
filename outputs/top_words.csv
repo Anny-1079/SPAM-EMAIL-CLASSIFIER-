@@ -1,0 +1,41 @@
+word,coefficient,indicates
+http,15.964,spam
+remov,14.9,spam
+softwar,13.088,spam
+onlin,11.626,spam
+bodi,11.53,spam
+hello,11.434,spam
+medic,11.21,spam
+mobil email,10.38,spam
+php,10.209,spam
+phone mobil,10.198,spam
+money,10.157,spam
+read attach,10.024,spam
+qualiti,9.573,spam
+life,9.295,spam
+goodby,9.268,spam
+sex,9.145,spam
+cheap,8.994,spam
+invest,8.9,spam
+med,8.847,spam
+free,8.796,spam
+enron,-44.028,ham
+vinc,-27.222,ham
+thank,-23.493,ham
+attach,-23.362,ham
+louis,-23.018,ham
+question,-16.66,ham
+dave,-15.929,ham
+energi,-15.208,ham
+daren,-15.107,ham
+deal,-14.727,ham
+let know,-14.574,ham
+employe,-14.301,ham
+houston,-14.264,ham
+doc,-14.226,ham
+ga,-14.112,ham
+enron com,-14.026,ham
+steve,-13.558,ham
+com http,-13.301,ham
+monday,-12.913,ham
+schedul,-12.887,ham
